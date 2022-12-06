@@ -1,0 +1,51 @@
+<html>
+    <head>
+        <title>Fusion Charts</title>
+    </head>
+<body>
+    <script src="https://cdn.fusioncharts.com/fusioncharts/latest/fusioncharts.js"></script>
+
+<!-- create a container for the chart -->
+<div id="chart-container">
+  FusionCharts will render here
+</div>
+
+<script>
+  // generate some random data
+  var data = [
+    {
+      name: "Item 1",
+      value: Math.random() * 100
+    },
+    {
+      name: "Item 2",
+      value: Math.random() * 100
+    },
+    {
+      name: "Item 3",
+      value: Math.random() * 100
+    }
+  ];
+
+  // create a chart using FusionCharts
+  var chart = new FusionCharts({
+    type: "line",
+    renderAt: "chart-container",
+    width: "500",
+    height: "400",
+    dataFormat: "json",
+    dataSource: {
+      // specify the data and other chart options
+      chart: {
+        caption: "Random Data",
+        theme: "fusion"
+      },
+      data: data
+    }
+  });
+
+  // render the chart
+  chart.render();
+</script>
+</body>
+</html>
